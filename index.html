@@ -2,19 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nafisa</title>
+  <meta name="description" content="Nafisa — brand, writing, and work." />
   <style>
-    body { font-family: Arial, sans-serif; max-width: 780px; margin: 80px auto; padding: 0 20px; line-height: 1.6; }
-    h1 { margin-bottom: 8px; }
-    .sub { color: #555; margin-top: 0; }
-    a { color: inherit; }
+    :root{
+      --bg:#0b0c10;
+      --card:#11131a;
+      --text:#f4f4f5;
+      --muted:#a1a1aa;
+      --line:#222533;
+      --accent:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:radial-gradient(1200px 800px at 20% 10%, #1a1d2b 0%, var(--bg) 55%);
+      color:var(--text);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    .wrap{max-width:980px;margin:0 auto;padding:72px 20px}
+    header{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;justify-content:space-between}
+    h1{font-size:44px;line-height:1.1;margin:0;letter-spacing:-0.02em}
+    .tag{color:var(--muted);margin:8px 0 0}
+    nav{display:flex;gap:14px;flex-wrap:wrap}
+    a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+    a:hover{border-bottom-color:var(--accent)}
+    .grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:18px;margin-top:28px}
+    .card{
+      background:color-mix(in srgb, var(--card) 92%, transparent);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .card h2{margin:0 0 10px;font-size:18px;letter-spacing:.01em}
+    .muted{color:var(--muted)}
+    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{
+      display:inline-block;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+    }
+    .btn:hover{background:rgba(255,255,255,.07)}
+    footer{margin-top:26px;color:var(--muted);font-size:14px}
+    @media (max-width: 820px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:38px}
+    }
   </style>
 </head>
 <body>
-  <h1>Nafisa</h1>
-  <p class="sub">Website coming online.</p>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Nafisa</h1>
+        <p class="tag">Writing, strategy, and building in public.</p>
+      </div>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <p>If you’re looking to contact me, email: <a href="mailto:you@email.com">you@email.com</a></p>
+    <div class="grid">
+      <section class="card" id="work">
+        <h2>What I do</h2>
+        <p class="muted">
+          I help teams and leaders communicate clearly, position ideas, and build trust.
+          This site is a simple hub for my work and writing.
+        </p>
+        <div class="btns">
+          <a class="btn" href="#writing">Read writing</a>
+          <a class="btn" href="#contact">Contact me</a>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Now</h2>
+        <p class="muted">
+          Currently open to opportunities and collaborations.
+        </p>
+        <p class="muted" style="margin-top:10px">
+          Location: Canada<br/>
+          Focus: brand, narrative, strategy
+        </p>
+      </aside>
+    </div>
+
+    <section class="card" id="writing" style="margin-top:18px">
+      <h2>Writing</h2>
+      <p class="muted">Add links to your blog posts or essays here.</p>
+      <ul>
+        <li><a href="#" onclick="return false;">Post title #1 (coming soon)</a></li>
+        <li><a href="#" onclick="return false;">Post title #2 (coming soon)</a></li>
+      </ul>
+    </section>
+
+    <section class="card" id="contact" style="margin-top:18px">
+      <h2>Contact</h2>
+      <p class="muted">
+        Email: <a href="mailto:you@email.com">you@email.com</a><br/>
+        LinkedIn: <a href="#" onclick="return false;">add your link</a>
+      </p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Nafisa. Built on GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
